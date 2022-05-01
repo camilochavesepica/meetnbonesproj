@@ -1,0 +1,21 @@
+<div>
+<h1>Forecast Webpage</h1>
+<a href = "https://meatnbone.com/">{% load static %} <img style="float: right;" src="{% static "dj_app/media/meatnbone.png" %}" alt="home" /> </a>
+</div>
+    {% if latest_question_list %}
+    <ul>
+    {% for model in latest_question_list %}
+        <li><a href="/tsmodels/{{ model}}/">{{ model }}</a></li>
+    {% endfor %}
+    </ul>
+
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+<div>
+     <p>This webpage contains forecasting models for sales of Meat N' Bone. You will also find the components
+     of our forecasting models such as trend, weekly and yearly seasonality of our time series models. </p>
+</div>
+
+
+
